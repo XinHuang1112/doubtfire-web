@@ -224,7 +224,7 @@ import {FTaskSheetViewComponent} from './units/states/tasks/viewer/directives/f-
 import {TasksViewerComponent} from './units/states/tasks/tasks-viewer/tasks-viewer.component';
 import {UnitCodeComponent} from './common/unit-code/unit-code.component';
 import {GradeService} from './common/services/grade.service';
-
+import {UnitDetailsEditorComponent} from './units/states/edit/directives/unit-details-editor/unit-details-editor.component';
 @NgModule({
   // Components we declare
   declarations: [
@@ -316,6 +316,7 @@ import {GradeService} from './common/services/grade.service';
     FChipComponent,
     UnitCodeComponent,
     NewTeachingPeriodDialogComponent,
+    UnitDetailsEditorComponent,
     FileViewerComponent,
     AlertComponent,
     FUnitTaskListComponent,

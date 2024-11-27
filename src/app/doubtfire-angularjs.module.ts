@@ -105,7 +105,7 @@ import 'build/src/app/units/states/portfolios/portfolios.js';
 import 'build/src/app/units/states/groups/groups.js';
 import 'build/src/app/units/states/states.js';
 import 'build/src/app/units/states/edit/directives/unit-group-set-editor/unit-group-set-editor.js';
-import 'build/src/app/units/states/edit/directives/unit-details-editor/unit-details-editor.js';
+//import 'build/src/app/units/states/edit/directives/unit-details-editor/unit-details-editor.js';
 import 'build/src/app/units/states/edit/directives/unit-staff-editor/unit-staff-editor.js';
 import 'build/src/app/units/states/edit/directives/unit-ilo-editor/unit-ilo-editor.js';
 import 'build/src/app/units/states/edit/directives/directives.js';
@@ -145,7 +145,7 @@ import 'build/src/i18n/resources-locale_en-US.js';
 import 'build/src/i18n/resources-locale_en-AU.js';
 import 'build/src/i18n/resources-locale_en-GB.js';
 //#endregion
-
+import {UnitDetailsEditorComponent} from './units/states/edit/directives/unit-details-editor/unit-details-editor.component';
 import {AboutDoubtfireModal} from 'src/app/common/modals/about-doubtfire-modal/about-doubtfire-modal.component';
 import {TaskCommentComposerComponent} from 'src/app/tasks/task-comment-composer/task-comment-composer.component';
 import {DoubtfireConstants} from 'src/app/config/constants/doubtfire-constants';
@@ -308,6 +308,10 @@ DoubtfireAngularJSModule.factory(
 DoubtfireAngularJSModule.factory('CreateNewUnitModal', downgradeInjectable(CreateNewUnitModal));
 
 // directive -> component
+DoubtfireAngularJSModule.directive(
+  'unitDetailsEditor',
+  downgradeComponent({ component: UnitDetailsEditorComponent })
+);
 DoubtfireAngularJSModule.directive(
   'taskCommentComposer',
   downgradeComponent({component: TaskCommentComposerComponent}),
