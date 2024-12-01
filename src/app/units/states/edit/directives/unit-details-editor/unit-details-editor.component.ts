@@ -104,4 +104,5 @@ export class UnitDetailsEditorComponent implements OnInit {
       }
     });
   }
+
 }
