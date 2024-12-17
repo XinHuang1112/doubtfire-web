@@ -1,0 +1,33 @@
+[33m889e767d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmigrate/StudentsListComponent[m[33m)[m HEAD@{0}: reset: moving to origin/development
+[33m889e767d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmigrate/StudentsListComponent[m[33m)[m HEAD@{1}: checkout: moving from migrate/StudentsListComponent to development
+[33m889e767d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmigrate/StudentsListComponent[m[33m)[m HEAD@{2}: checkout: moving from development to migrate/StudentsListComponent
+[33m889e767d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmigrate/StudentsListComponent[m[33m)[m HEAD@{3}: commit: feat: migration
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{4}: checkout: moving from UnitDetailsEditorComponent to development
+[33mb97d45c9[m[33m ([m[1;31morigin/UnitDetailsEditorComponent[m[33m, [m[1;32mUnitDetailsEditorComponent[m[33m)[m HEAD@{5}: checkout: moving from UnitDetailsEditorComponent to UnitDetailsEditorComponent
+[33mb97d45c9[m[33m ([m[1;31morigin/UnitDetailsEditorComponent[m[33m, [m[1;32mUnitDetailsEditorComponent[m[33m)[m HEAD@{6}: checkout: moving from e70f4c7cd1395eaab942ee389788f75f92e985c9 to UnitDetailsEditorComponent
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{7}: checkout: moving from UnitDetailsEditorComponent to e70f4c7cd1395eaab942ee389788f75f92e985c9
+[33mb97d45c9[m[33m ([m[1;31morigin/UnitDetailsEditorComponent[m[33m, [m[1;32mUnitDetailsEditorComponent[m[33m)[m HEAD@{8}: commit: feat: fix
+[33m60ea01b9[m HEAD@{9}: Branch: renamed refs/heads/migrate/unauthorisedcomponent to refs/heads/UnitDetailsEditorComponent
+[33m60ea01b9[m HEAD@{11}: commit: feat: changes
+[33m77bb40a3[m HEAD@{12}: commit: feat: add two new empty files
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{13}: checkout: moving from development to migrate/unauthorisedcomponent
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{14}: reset: moving to HEAD
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{15}: checkout: moving from migrate/UnitDeatilsEditor to development
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{16}: checkout: moving from migrate/UnitDeatilsEditor to migrate/UnitDeatilsEditor
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{17}: checkout: moving from development to migrate/UnitDeatilsEditor
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{18}: checkout: moving from migrate/unauthorised1112 to development
+[33m99c1c616[m[33m ([m[1;31morigin/migrate/unauthorised1112[m[33m, [m[1;32mmigrate/unauthorised1112[m[33m)[m HEAD@{19}: commit: refactor: finalchange
+[33me62b89ea[m HEAD@{20}: commit: refactor: xinhuang1112
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{21}: checkout: moving from development to migrate/unauthorised1112
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{22}: checkout: moving from migrate/unauthorisedcomponent to development
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{23}: checkout: moving from development to migrate/unauthorisedcomponent
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{24}: checkout: moving from migrate/unauthorised to development
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{25}: checkout: moving from development to migrate/unauthorised
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{26}: checkout: moving from migrate/group-member-contribution-assigner to development
+[33m84147ab9[m[33m ([m[1;31morigin/migrate/group-member-contribution-assigner[m[33m, [m[1;32mmigrate/group-member-contribution-assigner[m[33m)[m HEAD@{27}: commit: chore: code change
+[33m6179a00b[m HEAD@{28}: commit: chore: initialize migration of group-member-contributor-assigner component
+[33m325808d8[m HEAD@{29}: commit: chore: initialize migration of group-member-contributor-assigner component
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{30}: checkout: moving from development to migrate/group-member-contribution-assigner
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{31}: checkout: moving from 4eab6935b08b6d1e6c9868a6472e4ac5276bbe45 to development
+[33m4eab6935[m HEAD@{32}: checkout: moving from development to 4eab6935b08b6d1e6c9868a6472e4ac5276bbe45
+[33me70f4c7c[m[33m ([m[1;32mmigrate/unauthorised[m[33m, [m[1;32mmigrate/UnitDeatilsEditor[m[33m)[m HEAD@{33}: clone: from https://github.com/doubtfire-lms/doubtfire-web.git
