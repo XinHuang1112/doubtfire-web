@@ -8,7 +8,13 @@
       <h3 class="panel-title">Update Unit</h3>
       Update overview details of the unit below.
     </div>
-    <form class="form-horizontal" role="form" name="unitForm" (ngSubmit)="saveUnit()">
+    <form
+      class="form-horizontal"
+      role="form"
+      name="unitForm"
+      #unitForm="ngForm"
+      (ngSubmit)="saveUnit()"
+    >
       <div class="panel-body">
         <div class="form-group">
           <label class="col-sm-2 control-label" for="code">Code</label>
@@ -36,7 +42,12 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" for="description">Description</label>
           <div class="col-sm-9">
-            <textarea id="description" class="form-control" [(ngModel)]="unit.description"></textarea>
+            <textarea
+              name="unitDescription"
+              id="description"
+              class="form-control"
+              [(ngModel)]="unit.description"
+            ></textarea>
           </div>
         </div>
         <!--/description-date-->
@@ -44,7 +55,12 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" for="teachingPeriod">Teaching Period</label>
           <div class="col-sm-9">
-            <object-select [source]="teachingPeriodValues" [target]="unit.teachingPeriod" (target-change)="teachingPeriodSelected($event)" label="Select Teaching Period"  />
+            <object-select
+              [source]="teachingPeriodValues"
+              [target]="unit.teachingPeriod"
+              (target-change)="teachingPeriodSelected($event)"
+              label="Select Teaching Period"
+            />
           </div>
         </div>
         <!--/teaching-period-date-->
@@ -63,111 +79,59 @@
         <!--/draft-learning-summary-->
 
         <div class="form-group">
-          <label tooltip="Date for the start of teaching in the unit." class="col-sm-2 control-label" for="startdate"
+          <label tooltip="Date for the start of teaching in the unit." class="col-sm-2 control-label" for="startDate"
             >Start Date</label
           >
           <div class="col-sm-9">
-            <div class="col-sm-4 input-group">
+            <mat-form-field>
               <input
-                name="startDate"
-                datepicker-popup="yyyy-MM-dd"
-                is-open="calOptions.startOpened"
-                type="text"
-                class="form-control"
-                id="startdate"
+                matInput
+                [matDatepicker]="startDate"
+                required="!unit.teachingPeriod"
+                name="unitStartDate"
                 [(ngModel)]="unit.startDate"
-                ng-required="true"
-                placeholder="yyyy-MM-dd"
-                close-text="Close"
-                *ngIf="!unit.teachingPeriod"
               />
-              <input
-                name="techingPerior"
-                type="text"
-                class="form-control"
-                id="startdate"
-                value="{{unit.teachingPeriod.startDate | date}}"
-                ng-disabled="true"
-                *ngIf="unit.teachingPeriod"
-              />
-              <span class="input-group-btn">
-                <button
-                  class="btn btn-default"
-                  type="button"
-                  ng-click="open($event,'start')"
-                  ng-disabled="unit.teachingPeriod"
-                >
-                  <i class="fa fa-calendar"></i>
-                </button>
-              </span>
-            </div>
-          </div>
+              <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
+              <mat-datepicker #startDate></mat-datepicker>
+            </mat-form-field>
+        </div>
         </div>
         <!--/start-date-->
 
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="enddate">End Date</label>
+          <label class="col-sm-2 control-label" for="endDate">End Date</label>
           <div class="col-sm-9">
-            <div class="col-sm-4 input-group">
+            <mat-form-field>
               <input
-                datepicker-popup="{{format}}"
-                id="enddate"
-                type="text"
-                class="form-control"
+                matInput
+                [matDatepicker]="endDate"
+                required="!unit.teachingPeriod"
+                name="endDate"
                 [(ngModel)]="unit.endDate"
-                is-open="calOptions.endOpened"
-                ng-required="!unit.teachingPeriod"
-                close-text="Close"
-                *ngIf="!unit.teachingPeriod"
               />
-              <input
-                name="techingperiodEnddate"
-                id="enddate"
-                type="text"
-                class="form-control"
-                ng-value="unit.teachingPeriod.endDate | date"
-                ng-disabled="true"
-                *ngIf="unit.teachingPeriod"
-              />
-              <span class="input-group-btn">
-                <button
-                  class="btn btn-default"
-                  type="button"
-                  ng-click="open($event,'end')"
-                  ng-disabled="unit.teachingPeriod"
-                >
-                  <i class="fa fa-calendar"></i>
-                </button>
-              </span>
-            </div>
-          </div>
+              <mat-datepicker-toggle matIconSuffix [for]="endDate"></mat-datepicker-toggle>
+              <mat-datepicker #endDate></mat-datepicker>
+            </mat-form-field>
+        </div>
         </div>
         <!--/end-date-->
 
         <div class="form-group">
           <label class="col-sm-2 control-label" for="portfolioautogenerationdate">Portfolio auto-generation date</label>
           <div class="col-sm-9">
-            <div class="col-sm-4 input-group">
+            <mat-form-field>
               <input
-                datepicker-popup="yyyy-MM-dd"
-                id="portfolioautogenerationdate"
-                type="text"
-                class="form-control"
+                matInput
+                [matDatepicker]="portfolioautogenerationdate"
+                name="portfolioAutoGenerationDate"
                 [(ngModel)]="unit.portfolioAutoGenerationDate"
-                is-open="calOptions.portfolioAutoGenerationOpened"
-                ng-required="false"
-                close-text="Close"
               />
-              <span class="input-group-btn">
-                <button
-                  class="btn btn-default"
-                  type="button"
-                  ng-click="open($event,'autogen')"
-                >
-                  <i class="fa fa-calendar"></i>
-                </button>
-              </span>
-            </div>
+              <mat-datepicker-toggle
+                matIconSuffix
+                [for]="portfolioautogenerationdate"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #portfolioautogenerationdate></mat-datepicker>
+            </mat-form-field>
           </div>
         </div>
         <!--/portfolio-auto-generation-date-->
@@ -175,24 +139,10 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" for="enddate">Allow student extensions</label>
           <div class="col-sm-9">
-            <div class="btn-group">
-              <label
-                class="btn btn-{{unit.allowStudentExtensionRequests ? 'success' : 'default'}}"
-                [(ngModel)]="unit.allowStudentExtensionRequests"
-                btn-radio="true"
-                uncheckable
-              >
-                <i class="fa fa-check"></i>
-              </label>
-              <label
-                class="btn btn-{{unit.allowStudentExtensionRequests ? 'default' : 'danger'}}"
-                [(ngModel)]="unit.allowStudentExtensionRequests"
-                btn-radio="false"
-                uncheckable
-              >
-                <i class="fa fa-times"></i>
-              </label>
-            </div>
+            <mat-slide-toggle
+              [(ngModel)]="unit.allowStudentExtensionRequests"
+              name="allowStudentExtensionRequests"
+            ></mat-slide-toggle>
             <span class="help-block"> When false only staff can request extensions on behalf of students. </span>
           </div>
         </div>
@@ -220,24 +170,10 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" for="enddate">Auto apply extensions</label>
           <div class="col-sm-9">
-            <div class="btn-group">
-              <label
-                class="btn btn-{{unit.autoApplyExtensionBeforeDeadline ? 'success' : 'default'}}"
-                [(ngModel)]="unit.autoApplyExtensionBeforeDeadline"
-                btn-radio="true"
-                uncheckable
-              >
-                <i class="fa fa-check"></i>
-              </label>
-              <label
-                class="btn btn-{{unit.autoApplyExtensionBeforeDeadline ? 'default' : 'danger'}}"
-                [(ngModel)]="unit.autoApplyExtensionBeforeDeadline"
-                btn-radio="false"
-                uncheckable
-              >
-                <i class="fa fa-times"></i>
-              </label>
-            </div>
+            <mat-slide-toggle
+              name="autoApplyExtensionBeforeDeadline"
+              [(ngModel)]="unit.autoApplyExtensionBeforeDeadline"
+            ></mat-slide-toggle>
             <span class="help-block">
               When true, extensions will be automatically applied when they result in a date that is between the task's
               due date and deadline.
@@ -249,25 +185,11 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" for="enddate">Allow students to change tutorial</label>
           <div class="col-sm-9">
-            <div class="btn-group">
-              <label
-                class="btn btn-{{unit.allowStudentChangeTutorial ? 'success' : 'default'}}"
-                [(ngModel)]="unit.allowStudentChangeTutorial"
-                btn-radio="true"
-                uncheckable
-              >
-                <i class="fa fa-check"></i>
-              </label>
-              <label
-                class="btn btn-{{unit.allowStudentChangeTutorial ? 'default' : 'danger'}}"
-                [(ngModel)]="unit.allowStudentChangeTutorial"
-                btn-radio="false"
-                uncheckable
-              >
-                <i class="fa fa-times"></i>
-              </label>
-            </div>
-            <span class="help-block"> When false only staff can change student tutorials. </span>
+            <mat-slide-toggle
+              name="allowStudentChangeTutorial"
+              [(ngModel)]="unit.allowStudentChangeTutorial"
+            ></mat-slide-toggle>
+             <span class="help-block"> When false only staff can change student tutorials. </span>
           </div>
         </div>
         <!--/allowStudentChangeTutorial-->
@@ -275,24 +197,10 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" for="enddate">Send notification emails</label>
           <div class="col-sm-9">
-            <div class="btn-group">
-              <label
-                class="btn btn-{{unit.sendNotifications ? 'success' : 'default'}}"
-                [(ngModel)]="unit.sendNotifications"
-                btn-radio="true"
-                uncheckable
-              >
-                <i class="fa fa-check"></i>
-              </label>
-              <label
-                class="btn btn-{{unit.sendNotifications ? 'default' : 'danger'}}"
-                [(ngModel)]="unit.sendNotifications"
-                btn-radio="false"
-                uncheckable
-              >
-                <i class="fa fa-times"></i>
-              </label>
-            </div>
+            <mat-slide-toggle
+              name="sendNotifications"
+              [(ngModel)]="unit.sendNotifications"
+            ></mat-slide-toggle>
             <span class="help-block">
               When true, emails will be set to students each week to indicate progress and suggest future tasks for them
               to work on.
@@ -304,24 +212,10 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" for="enddate">Synchronise enrolments</label>
           <div class="col-sm-9">
-            <div class="btn-group">
-              <label
-                class="btn btn-{{unit.enableSyncEnrolments ? 'success' : 'default'}}"
-                [(ngModel)]="unit.enableSyncEnrolments"
-                btn-radio="true"
-                uncheckable
-              >
-                <i class="fa fa-check"></i>
-              </label>
-              <label
-                class="btn btn-{{unit.enableSyncEnrolments ? 'default' : 'danger'}}"
-                [(ngModel)]="unit.enableSyncEnrolments"
-                btn-radio="false"
-                uncheckable
-              >
-                <i class="fa fa-times"></i>
-              </label>
-            </div>
+            <mat-slide-toggle
+              name="enableSyncEnrolments"
+              [(ngModel)]="unit.enableSyncEnrolments"
+            ></mat-slide-toggle>
             <span class="help-block">
               When true student enrolments will be synchronised with other systems where this is possible.
             </span>
@@ -332,24 +226,10 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" for="enddate">Synchronise Timetable</label>
           <div class="col-sm-9">
-            <div class="btn-group">
-              <label
-                class="btn btn-{{unit.enableSyncTimetable ? 'success' : 'default'}}"
-                [(ngModel)]="unit.enableSyncTimetable"
-                btn-radio="true"
-                uncheckable
-              >
-                <i class="fa fa-check"></i>
-              </label>
-              <label
-                class="btn btn-{{unit.enableSyncTimetable ? 'default' : 'danger'}}"
-                [(ngModel)]="unit.enableSyncTimetable"
-                btn-radio="false"
-                uncheckable
-              >
-                <i class="fa fa-times"></i>
-              </label>
-            </div>
+            <mat-slide-toggle
+              name="enableSyncTimetable"
+              [(ngModel)]="unit.enableSyncTimetable"
+            ></mat-slide-toggle>
             <span class="help-block">
               When true timetable data will be synchronised with other systems where this is possible.
             </span>
@@ -360,24 +240,10 @@
         <div class="form-group" *ngIf="overseerEnabled">
           <label class="col-sm-2 control-label">Overseer Assessment</label>
           <div class="col-sm-9">
-            <div class="btn-group">
-              <label
-                class="btn btn-{{unit.assessmentEnabled ? 'success' : 'default'}}"
-                [(ngModel)]="unit.assessmentEnabled"
-                btn-radio="true"
-                uncheckable
-              >
-                <i class="fa fa-check"></i>
-              </label>
-              <label
-                class="btn btn-{{unit.assessmentEnabled ? 'default' : 'danger'}}"
-                [(ngModel)]="unit.assessmentEnabled"
-                btn-radio="false"
-                uncheckable
-              >
-                <i class="fa fa-times"></i>
-              </label>
-            </div>
+            <mat-slide-toggle
+              name="assessmentEnabled"
+              [(ngModel)]="unit.assessmentEnabled"
+            ></mat-slide-toggle>
             <span class="help-block">
               If true, unit tasks will be able to make use of Overseer automated checking.
             </span>
@@ -400,24 +266,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label" for="enddate">Active</label>
           <div class="col-sm-9">
-            <div class="btn-group">
-              <label
-                class="btn btn-{{unit.active ? 'success' : 'default'}}"
-                [(ngModel)]="unit.active"
-                btn-radio="true"
-                uncheckable
-              >
-                <i class="fa fa-check"></i>
-              </label>
-              <label
-                class="btn btn-{{unit.active ? 'default' : 'danger'}}"
-                [(ngModel)]="unit.active"
-                btn-radio="false"
-                uncheckable
-              >
-                <i class="fa fa-times"></i>
-              </label>
-            </div>
+            <mat-slide-toggle name="active" [(ngModel)]="unit.active"></mat-slide-toggle>
             <span class="help-block">
               Set to false to hide unit from students and tutors.
             </span>
@@ -426,7 +275,7 @@
         <!--/active-->
       </div>
       <div class="panel-footer text-right">
-        <a class="btn btn-success" ui-sref="units/rollover">
+        <a class="btn btn-success" (click)="goRollover()">
           <header>Rollover</header>
         </a>
         <input

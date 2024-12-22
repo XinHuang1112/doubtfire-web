@@ -5,7 +5,7 @@ import { UnitService } from 'src/app/api/services/unit.service';
 import { TeachingPeriodService } from 'src/app/api/services/teaching-period.service';
 import { TaskSubmissionService } from 'src/app/common/services/task-submission.service';
 import { Unit } from 'src/app/api/models/unit';
-
+import { UIRouter } from '@uirouter/angular';
 
 
 
@@ -33,7 +33,8 @@ export class UnitDetailsEditorComponent implements OnInit {
     private newUnitService: UnitService,
     private alertService: AlertService,
     private newTeachingPeriodService: TeachingPeriodService,
-    private taskSubmission: TaskSubmissionService
+    private taskSubmission: TaskSubmissionService,
+    private router: UIRouter,
   ) {}
 
   ngOnInit(): void {
@@ -75,25 +76,11 @@ export class UnitDetailsEditorComponent implements OnInit {
     // Set the selected draft task definition
   }
 
-  open(event: Event, pickerData: string): void {
-    event.preventDefault();
-    event.stopPropagation();
-
-    if (pickerData === 'start') {
-      this.calOptions.startOpened = !this.calOptions.startOpened;
-      this.calOptions.endOpened = false;
-      this.calOptions.portfolioAutoGenerationOpened = false;
-    } else if (pickerData === 'end') {
-      this.calOptions.startOpened = false;
-      this.calOptions.endOpened = !this.calOptions.endOpened;
-      this.calOptions.portfolioAutoGenerationOpened = false;
-    } else if (pickerData === 'autogen') {
-      this.calOptions.startOpened = false;
-      this.calOptions.endOpened = false;
-      this.calOptions.portfolioAutoGenerationOpened = !this.calOptions.portfolioAutoGenerationOpened;
-    }
+  goRollover(){
+    this.router.stateService.go('units/rollover', {
+      //projectId: this.unit.id,
+    });
   }
-
   saveUnit(): void {
     this.newUnitService.update(this.unit).subscribe({
       next: (unit) => {
