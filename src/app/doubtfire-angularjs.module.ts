@@ -110,7 +110,6 @@ import 'build/src/app/units/states/edit/directives/unit-staff-editor/unit-staff-
 import 'build/src/app/units/states/edit/directives/unit-ilo-editor/unit-ilo-editor.js';
 import 'build/src/app/units/states/edit/directives/directives.js';
 import 'build/src/app/units/states/edit/edit.js';
-import 'build/src/app/units/states/rollover/directives/unit-dates-selector/unit-dates-selector.js';
 import 'build/src/app/units/states/rollover/directives/directives.js';
 import 'build/src/app/units/states/rollover/rollover.js';
 import 'build/src/app/units/states/index/index.js';
@@ -163,6 +162,7 @@ import {UnitTutorialsManagerComponent} from './units/states/edit/directives/unit
 import {TutorialService} from './api/services/tutorial.service';
 import {TutorialStreamService} from './api/services/tutorial-stream.service';
 import {UnitStudentsEditorComponent} from './units/states/edit/directives/unit-students-editor/unit-students-editor.component';
+import {UnitDatesSelectorComponent} from 'src/app/units/states/rollover/directives/unit-dates-selector/unit-dates-selector.component';
 import {CampusService} from './api/services/campus.service';
 import {WebcalService} from './api/services/webcal.service';
 import {StudentTutorialSelectComponent} from './units/states/edit/directives/unit-students-editor/student-tutorial-select/student-tutorial-select.component';
@@ -400,6 +400,10 @@ DoubtfireAngularJSModule.directive(
 DoubtfireAngularJSModule.directive(
   'unitStudentsEditor',
   downgradeComponent({component: UnitStudentsEditorComponent}),
+);
+DoubtfireAngularJSModule.directive(
+  'fUnitDatesSelector',
+  downgradeComponent({component: UnitDatesSelectorComponent}),
 );
 DoubtfireAngularJSModule.directive(
   'fTaskDefinitionEditor',
