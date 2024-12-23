@@ -43,7 +43,6 @@
                 required="!unit.teachingPeriod"
                 name="unitStartDate"
                 [(ngModel)]="saveData.toPeriod.startDate"
-                [disabled]="saveData.toPeriod"
               />
               <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
               <mat-datepicker #startDate></mat-datepicker>
@@ -62,7 +61,6 @@
                 required="!unit.teachingPeriod"
                 name="endDate"
                 [(ngModel)]="saveData.toPeriod.endDate"
-                [disabled]="saveData.toPeriod"
               />
               <mat-datepicker-toggle matIconSuffix [for]="endDate"></mat-datepicker-toggle>
               <mat-datepicker #endDate></mat-datepicker>
