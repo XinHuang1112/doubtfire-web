@@ -225,7 +225,6 @@ import {TasksViewerComponent} from './units/states/tasks/tasks-viewer/tasks-view
 import {UnitCodeComponent} from './common/unit-code/unit-code.component';
 import {GradeService} from './common/services/grade.service';
 import {FStudentsListComponent} from './units/states/students-list/students-list.component';
-import {GradeIconComponent} from './units/states/students-list/grade-icon/grade-icon.component';
 
 @NgModule({
   // Components we declare
@@ -328,7 +327,6 @@ import {GradeIconComponent} from './units/states/students-list/grade-icon/grade-
     FTaskBadgeComponent,
     FUnitsComponent,
     FStudentsListComponent,
-    GradeIconComponent,
   ],
   // Services we provide
   providers: [
@@ -380,7 +378,6 @@ import {GradeIconComponent} from './units/states/students-list/grade-icon/grade-
     plagiarismReportModalProvider,
     UnitStudentsEditorComponent,
     FStudentsListComponent,
-    GradeIconComponent,
     ConfirmationModalProvider,
     {
       provide: HTTP_INTERCEPTORS,

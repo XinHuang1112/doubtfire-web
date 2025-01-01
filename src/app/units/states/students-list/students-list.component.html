@@ -64,7 +64,11 @@
       <td mat-cell *matCellDef="let project" (click)="viewStudent(project)">
         <span class="flags">
           <span class="flag">
-            <f-grade-icon [inputGrade]="project.targetGrade"></f-grade-icon>
+            <span class="grade-icon">
+              <span class="grade-icon" [class]="gradeClass(project.targetGrade)">
+                {{ gradeLetter(project.targetGrade) }}
+              </span>
+            </span>
           </span>
           <span [hidden]="!project.similarityFlag" class="flag">
             <i class="fa fa-eye fa-2x"></i>

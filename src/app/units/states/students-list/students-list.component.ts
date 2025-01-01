@@ -13,6 +13,7 @@ import { Project, ProjectService, TaskService, Unit } from 'src/app/api/models/d
 import { UIRouter } from '@uirouter/angular';
 import { Subscription } from 'rxjs';
 import { AlertService } from 'src/app/common/services/alert.service';
+import { GradeService } from 'src/app/common/services/grade.service';
 
 @Component({
   selector: 'f-students-list',
@@ -31,7 +32,6 @@ export class FStudentsListComponent implements AfterViewInit, OnDestroy {
 
   columns: string[] = ['icon', 'username', 'name', 'stats', 'flags', 'campus', 'tutorial'];
   dataSource: MatTableDataSource<Project>;
-
   // Calls the parent's constructor, passing in an object
   // that maps all of the form controls that this form consists of.
   constructor(
@@ -42,6 +42,7 @@ export class FStudentsListComponent implements AfterViewInit, OnDestroy {
     @Inject(csvUploadModalService) private csvUploadModal: any,
     @Inject(csvResultModalService) private csvResultModal: any,
     private fileDownloader: FileDownloaderService,
+    private gradeService: GradeService,
     private router: UIRouter,
     private projectService: ProjectService,
   ) {}
@@ -71,6 +72,31 @@ export class FStudentsListComponent implements AfterViewInit, OnDestroy {
     this.subscriptions.forEach((s) => s.unsubscribe());
   }
 
+  gradeText(grade: number): string {
+    return this.gradeService.grades[grade] || 'Grade';
+  }
+  gradeClass(inputGrade) {
+    const grade = this.gradeNumber(inputGrade);
+    return {
+      'colorful': false,
+      'grade-0': grade === 0,
+      'grade-1': grade === 1,
+      'grade-2': grade === 2,
+      'grade-3': grade === 3,
+    };
+  }
+  gradeNumber(inputGrade) {
+    let grade;
+    if (typeof inputGrade === 'string') {
+      grade = this.gradeService.stringToGrade(inputGrade);
+    } else {
+      grade = inputGrade;
+    }
+    return grade;
+  }
+  gradeLetter(inputGrade): string {
+    return this.gradeService.gradeAcronyms[this.gradeNumber(inputGrade)] || 'G';
+  }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
